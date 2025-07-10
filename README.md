@@ -56,7 +56,7 @@ To run or audit this backend code:
 
 For questions about this code or Zenx.ink’s privacy commitments, please reach out:
 
-- Email: contact@zenx.ink  
+- Email: zenxchange@proton.me
 - Website: [https://zenx.ink](https://zenx.ink)
 
 ---
