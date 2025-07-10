@@ -15,7 +15,7 @@ Zenx.ink enables fast, private, and secure swaps across multiple cryptocurrencie
 
 ## Why Partial Open Source?
 
-Transparency builds trust. We provide public access to key backend components so users and auditors can verify there is **no hidden logging, tracking, or data collection**.
+Transparency builds trust. We provide public access to key backend components so users can verify there is **no hidden logging, tracking, or data collection**.
 
 However, the core unique business logic, proprietary algorithms, and integrations are kept closed-source to protect Zenx.ink’s competitive edge and prevent unauthorized copying or cloning.
 
@@ -23,7 +23,7 @@ However, the core unique business logic, proprietary algorithms, and integration
 
 ## License: Zenx.ink Partial Open License (ZenPOL v1.0)
 
-This code is released **only** for transparency and auditing purposes.
+This code is released **only** for transparency.
 
 ### Permitted Uses:
 - Viewing and inspecting the source code.
@@ -41,7 +41,7 @@ All rights reserved by Zenx.ink.
 
 ## Getting Started
 
-To run or audit this backend code:
+To run this backend code:
 
 1. Clone or download the repository.
 2. Install dependencies listed in `requirements.txt`.
