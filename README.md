@@ -37,8 +37,6 @@ This code is released **only** for transparency and auditing purposes.
 
 All rights reserved by Zenx.ink.
 
-Violations may result in legal enforcement actions.
-
 ---
 
 ## Getting Started
