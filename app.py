@@ -1,5 +1,10 @@
 from flask import Flask, request, render_template, send_from_directory
+import requests
 import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from datetime import datetime, timedelta
+from dateutil.parser import isoparse
+import qrcode
 import os
 
 app = Flask(__name__)
