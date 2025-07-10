@@ -21,3 +21,21 @@ SHALL THE COPYRIGHT HOLDERS OR ANYONE DISTRIBUTING THE SOFTWARE BE LIABLE
 FOR ANY DAMAGES OR OTHER LIABILITY, WHETHER IN CONTRACT, TORT OR OTHERWISE,
 ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 DEALINGS IN THE SOFTWARE.
+
+Zenx.ink Partial Open License (ZenPOL v1.0)
+
+This portion of Zenx.ink’s backend code is released for transparency and auditing only.
+You are permitted to:
+- View and inspect this source code.
+- Run it for personal or academic non-commercial use.
+- Use it solely to verify that Zenx.ink does not log or collect user data.
+
+You are **not permitted to**:
+- Use this code for any commercial purpose.
+- Modify, fork, rebrand, or republish this software.
+- Create any derivative works or services based on this code.
+
+This code is copyright © Zenx.ink and its original authors.
+All rights reserved except for the uses explicitly granted above.
+
+Violators may be subject to takedown notices, license enforcement, and legal action.
