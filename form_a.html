@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Z E N X</title>
+  <link rel="icon" href="icons/favicon.png" type="image/png">
+  <link rel="stylesheet" href="/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="canonical" href="/" />
+</head>
+
+<body>
+
+  <div class="page-wrapper">
+
+<nav class="navbar">
+  <ul class="nav-list">
+    <li><a href="/"><img src="icons/navbar-icon.png" alt="ZENX Logo" class="navbar-logo"></a></li>
+    <li><a href="/" class="nav-link">Home</a></li>
+    <li><a href="/about" class="nav-link">About</a></li>
+    <li><a href="/faq" class="nav-link">FAQ</a></li>
+  </ul>
+</nav>
+
+  <div class="card-container">
+    <div class="blue-card">
+      <form method="POST" action="/" id="estimateForm">
+        <button type="submit" class="invisible-button" name="form_stage" value="form_a">Check Estimates</button>
+        <label>You Send<br>
+          <input
+            type="number"
+            name="sendAmount"
+            step="0.000000000001"
+            min="0"
+            placeholder="0.0"
+            required
+            value="{{ send_amount }}"
+            autocomplete="off"
+          >
+        </label><br>
+
+        <div class="dropdown">
+          <input type="radio" name="token" id="token_pivx" value="pivx" {% if token_from == 'pivx' %}checked{% endif %}>
+          <input type="radio" name="token" id="token_xmr" value="xmr" {% if token_from == 'xmr' %}checked{% endif %}>
+          <input type="radio" name="token" id="token_dash" value="dash" {% if token_from == 'dash' %}checked{% endif %}>
+          <input type="radio" name="token" id="token_btc" value="btc" {% if token_from == 'btc' or not token_from %}checked{% endif %}>
+          <input type="radio" name="token" id="token_ltc" value="ltc" {% if token_from == 'ltc' %}checked{% endif %}>
+          <input type="radio" name="token" id="token_firo" value="firo" {% if token_from == 'firo' %}checked{% endif %}>
+          <input type="radio" name="token" id="token_zano" value="zano" {% if token_from == 'zano' %}checked{% endif %}>
+          <input type="radio" name="token" id="token_doge" value="doge" {% if token_from == 'doge' %}checked{% endif %}>
+          <input type="radio" name="token" id="token_bch" value="bch" {% if token_from == 'bch' %}checked{% endif %}>
+          <input type="radio" name="token" id="token_zec" value="zec" {% if token_from == 'zec' %}checked{% endif %}>
+          <input type="radio" name="token" id="token_eth" value="eth" {% if token_from == 'eth' %}checked{% endif %}>
+
+          <input type="checkbox" id="dropdownToggle">
+
+          <label for="dropdownToggle" class="button">
+            <div class="selected-text">
+              <span class="pivx"><span class="token-icon pivx-icon"></span>PIVX (PIVX)</span>
+              <span class="xmr"><span class="token-icon xmr-icon"></span>Monero (XMR)</span>
+              <span class="dash"><span class="token-icon dash-icon"></span>Dash (DASH)</span>
+              <span class="btc"><span class="token-icon btc-icon"></span>Bitcoin (BTC)</span>
+              <span class="ltc"><span class="token-icon ltc-icon"></span>Litecoin (LTC)</span>
+              <span class="firo"><span class="token-icon firo-icon"></span>Firo (FIRO)</span>
+              <span class="zano"><span class="token-icon zano-icon"></span>Zano (ZANO)</span>
+              <span class="doge"><span class="token-icon doge-icon"></span>Dogecoin (DOGE)</span>
+              <span class="bch"><span class="token-icon bch-icon"></span>Bitcoin Cash (BCH)</span>
+              <span class="zec"><span class="token-icon zec-icon"></span>Zcash (ZEC)</span>
+              <span class="eth"><span class="token-icon eth-icon"></span>Ethereum (ETH)</span>
+            </div>
+          </label>
+
+          <div class="dropdown-list">
+            <label for="token_pivx"><div class="token-icon pivx-icon"></div>PIVX (PIVX)</label>
+            <label for="token_xmr"><div class="token-icon xmr-icon"></div>Monero (XMR)</label>
+            <label for="token_dash"><div class="token-icon dash-icon"></div>Dash (DASH)</label>
+            <label for="token_btc"><div class="token-icon btc-icon"></div>Bitcoin (BTC)</label>
+            <label for="token_ltc"><div class="token-icon ltc-icon"></div>Litecoin (LTC)</label>
+            <label for="token_firo"><div class="token-icon firo-icon"></div>Firo (FIRO)</label>
+            <label for="token_zano"><div class="token-icon zano-icon"></div>Zano (ZANO)</label>
+            <label for="token_doge"><div class="token-icon doge-icon"></div>Dogecoin (DOGE)</label>
+            <label for="token_bch"><div class="token-icon bch-icon"></div>Bitcoin Cash (BCH)</label>
+            <label for="token_zec"><div class="token-icon zec-icon"></div>Zcash (ZEC)</label>
+            <label for="token_eth"><div class="token-icon eth-icon"></div>Ethereum (ETH)</label>
+          </div>
+        </div>
+
+        <div class="swap-divider">
+          <button class="swap-icon" type="submit" name="action" value="swap" formnovalidate>
+            <img src="icons/swap.png" alt="Swap">
+          </button>
+        </div>
+
+        <label>You Receive
+        <div class="tooltip tooltip-blue">i
+          <span class="tooltip-text">Estimated from best available rate (lowest premium). Actual amount received may vary based on your selected exchange provider.</span>
+        </div><br>
+          <input
+            id="you_receive"
+            name="youReceive"
+            type="text"
+            readonly
+            value="{{ you_receive_display }}"
+            class="greyed-placeholder"
+            placeholder="0.0"
+          />
+        </label>
+
+        <div class="dropdown dropdownToggleB">
+          <input type="radio" name="token_b" id="token_b_pivx" value="pivx" {% if token_to == 'pivx' %}checked{% endif %}>
+          <input type="radio" name="token_b" id="token_b_xmr" value="xmr" {% if token_to == 'xmr' %}checked{% endif %}>
+          <input type="radio" name="token_b" id="token_b_dash" value="dash" {% if token_to == 'dash' %}checked{% endif %}>
+          <input type="radio" name="token_b" id="token_b_btc" value="btc" {% if token_to == 'btc' %}checked{% endif %}>
+          <input type="radio" name="token_b" id="token_b_ltc" value="ltc" {% if token_to == 'ltc' or not token_to %}checked{% endif %}>
+          <input type="radio" name="token_b" id="token_b_firo" value="firo" {% if token_to == 'firo' %}checked{% endif %}>
+          <input type="radio" name="token_b" id="token_b_zano" value="zano" {% if token_to == 'zano' %}checked{% endif %}>
+          <input type="radio" name="token_b" id="token_b_doge" value="doge" {% if token_to == 'doge' %}checked{% endif %}>
+          <input type="radio" name="token_b" id="token_b_bch" value="bch" {% if token_to == 'bch' %}checked{% endif %}>
+          <input type="radio" name="token_b" id="token_b_zec" value="zec" {% if token_to == 'zec' %}checked{% endif %}>
+          <input type="radio" name="token_b" id="token_b_eth" value="eth" {% if token_to == 'eth' %}checked{% endif %}>
+
+          <input type="checkbox" id="dropdownToggleB">
+
+          <label for="dropdownToggleB" class="button">
+            <div class="selected-text">
+              <span class="pivx"><span class="token-icon pivx-icon"></span>PIVX (PIVX)</span>
+              <span class="xmr"><span class="token-icon xmr-icon"></span>Monero (XMR)</span>
+              <span class="dash"><span class="token-icon dash-icon"></span>Dash (DASH)</span>
+              <span class="btc"><span class="token-icon btc-icon"></span>Bitcoin (BTC)</span>
+              <span class="ltc"><span class="token-icon ltc-icon"></span>Litecoin (LTC)</span>
+              <span class="firo"><span class="token-icon firo-icon"></span>Firo (FIRO)</span>
+              <span class="zano"><span class="token-icon zano-icon"></span>Zano (ZANO)</span>
+              <span class="doge"><span class="token-icon doge-icon"></span>Dogecoin (DOGE)</span>
+              <span class="bch"><span class="token-icon bch-icon"></span>Bitcoin Cash (BCH)</span>
+              <span class="zec"><span class="token-icon zec-icon"></span>Zcash (ZEC)</span>
+              <span class="eth"><span class="token-icon eth-icon"></span>Ethereum (ETH)</span>
+            </div>
+          </label>
+
+          <div class="dropdown-list">
+            <label for="token_b_pivx"><div class="token-icon pivx-icon"></div>PIVX (PIVX)</label>
+            <label for="token_b_xmr"><div class="token-icon xmr-icon"></div>Monero (XMR)</label>
+            <label for="token_b_dash"><div class="token-icon dash-icon"></div>Dash (DASH)</label>
+            <label for="token_b_btc"><div class="token-icon btc-icon"></div>Bitcoin (BTC)</label>
+            <label for="token_b_ltc"><div class="token-icon ltc-icon"></div>Litecoin (LTC)</label>
+            <label for="token_b_firo"><div class="token-icon firo-icon"></div>Firo (FIRO)</label>
+            <label for="token_b_zano"><div class="token-icon zano-icon"></div>Zano (ZANO)</label>
+            <label for="token_b_doge"><div class="token-icon doge-icon"></div>Dogecoin (DOGE)</label>
+            <label for="token_b_bch"><div class="token-icon bch-icon"></div>Bitcoin Cash (BCH)</label>
+            <label for="token_b_zec"><div class="token-icon zec-icon"></div>Zcash (ZEC)</label>
+            <label for="token_b_eth"><div class="token-icon eth-icon"></div>Ethereum (ETH)</label>
+          </div>
+        </div>
+        <div class="button-container">
+          <button type="submit" class="estimate-button" name="form_stage" value="form_a">Check Estimates</button>
+        </div>
+      </form>
+    </div>
+
+    </div> <!-- page-wrapper-->
+
+<footer class="footer">
+  <ul class="nav-list">
+    <li>
+      <a href="mailto:zenxchange@proton.me">
+        <img src="icons/email.png" alt="Email" width="24" height="24">
+      </a>
+    </li>
+    <li>
+      <a href="https://x.com/ZENX_crypto" target="_blank">
+        <img src="icons/twitter.png" alt="Twitter" width="24" height="24">
+      </a>
+    </li>
+  </ul>
+</footer>
+
+</body>
+</html>
