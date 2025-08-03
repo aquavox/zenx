@@ -17,7 +17,7 @@ Zenx.ink enables fast, private, and secure swaps across multiple cryptocurrencie
 
 Transparency builds trust. We provide public access to key backend components so users can verify there is **no hidden logging, tracking, or data collection**.
 
-However, the core unique business logic, proprietary algorithms, and integrations are kept closed-source to protect Zenx.ink’s competitive edge and prevent unauthorized copying or cloning.
+However, the core unique business logic, proprietary algorithms, and integrations are kept closed-source to protect Zenx.ink’s competitive edge and prevent unauthorized copying or cloning. ZENX plans to go fully open source once the project has reached enough maturity to the point where the threat of being copied/stolen is no longer as devastating to development as it is in earlier phases of adoption.
 
 ---
 
